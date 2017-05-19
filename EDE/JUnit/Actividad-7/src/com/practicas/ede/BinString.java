@@ -3,16 +3,19 @@
 package com.practicas.ede;
 
 // ¿Qué puede hacer esta Clase?
+//Convierte un String a binario pasando por su valor ASCII
 public class BinString {
 	public BinString(){}
 
 	// ¿Qué hace este método?
-	public String convertir(String s){
+	//Se le pasa un String y devuelve el valor en binario de su valor ASCII
+	public static String convertir(String s){
 		return aBinario(sumar(s));
 	}
 	
 	// ¿Qué hace este método?
-	public int sumar(String s){
+	//Suma los valores ASCII de los caracteres del String que se pasa por parámetro
+	public static int sumar(String s){
 		String s1 = s.substring(0);
 		int sum = 0;
 		while(!s1.equals(""))
@@ -25,7 +28,8 @@ public class BinString {
 	}
 	
 	// ¿Qué hace este método?
-	public String aBinario(int n){
+	//Pasa el valor ASCII anterior a binario
+	public static String aBinario(int n){
 	    String s = "";
 	    
 	    while (n > 0)
@@ -38,5 +42,12 @@ public class BinString {
 	    }
 	    
 	    return s;
+	}
+	
+	public static void main(String[] args){
+		System.out.println(convertir("Hola"));
+		String s="Hola";
+		System.out.println(s.substring(2));
+		System.out.println(sumar("H"));
 	}
 }
